@@ -1,4 +1,10 @@
 Sorting
 =======
 
-sorting algorithm based on ELO algorithm
+This is a web app that is not yet available online but only works locally. It uses a postgresql database and is build using the pyramid-python framework. 
+
+It is used to sort large arrays of items. Say you have a large number of restaurants and you want to rank them from best to worst. This is a somewhat overwhelming task and prone to inaccuracy, especially with a large group of items. Instead, you can input items into a database of your choice, preferrably managed with the SQLAlchemy ORM so that it integrates with this code. The app then puts all of the restaurants on a line from best to worst. They all start out in the middle. Then you click the "start sorting" link at the bottom and it randomly picks two restaurants for you to compare. You click on the one you prefer and it adjust's the scores of each restaurant accordingly based on the sorting algorithm. Then it gives you two more choices and you pick between them. You continue to do this and the scores are being adjusted while the restaurants are being "sorted" according to their relative scores. You get tired of doing this and go back to the home page where the restaurants have all moved up or down the line according to their relative scores. Upon review, you look at the rankings and realize that they are ordered quite accurately in terms of your favorite, your second favorite...... and so on to your least favorite. Thus the app has taken care of sorting all items based on your individual choices between two random items. 
+
+The score adjustment each time is quite similar to the adjustment used in the ELO algoithm commonly associated with ranking chess players. For each selection of two random items, both items are given an expected value based on their current scores and previous performaces. Then based on the users selection, these expected values are multiplied against an incrementing or decrementing function to find the new scores. However, for this algorithm, there is an additional exponential correction factor which forces all of the items onto a Gaussian distribution/bell curve. This ensures that they all stay within a certain range and that most of them are near the middle. 
+
+Obviously it can be used for restaurants, but also for any other kind of item you decide to put in the database. 
