@@ -1,0 +1,43 @@
+<html>
+
+  <link rel="stylesheet"
+        href="${request.static_url('sorting:static/pylons.css')}"
+        type="text/css" media="screen" charset="utf-8" />
+<html lang="en" class="no-js">
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+<div class="form1">
+<form name="form1" action="/sorting" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+<p>${name1} : ${disp_data1}</p>
+<input type="hidden" name="form" value="form1">
+<input type="hidden" name="id1" value=${id1}>
+<input type="hidden" name="id2" value=${id2}>
+<input type="hidden" name="data1" value=${data1}>
+<input type="hidden" name="data2" value=${data2}>
+<input type="image" value="submit" src="${url1}" alt="submit Button" width="300">
+</form>
+</div>
+<div class="form2">
+<form name="form2" action="/sorting" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+<p>${name2} : ${disp_data2}</p>
+<input type="hidden" name="form" value="form2">
+<input type="hidden" name="id1" value=${id1}>
+<input type="hidden" name="id2" value=${id2}>
+<input type="hidden" name="data1" value=${data1}>
+<input type="hidden" name="data2" value=${data2}>
+<input type="image" value="submit" src="${url2}" alt="submit Button" width="300">
+</form>
+</div>
+
+
+
+<style type="text/css">
+	.form1 {
+	float:left;
+	}
+	.form2 {
+	
+}
+</style>
+
+</html>
